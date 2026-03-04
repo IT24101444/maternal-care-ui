@@ -1,0 +1,74 @@
+.dashboard-header {
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.header-left {
+  flex: 0.2;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #17a2b8;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.back-btn:hover {
+  color: #1a5f6f;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.header-greeting {
+  font-size: 1.2rem;
+  color: #1a5f6f;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header-right {
+  flex: 0.2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.notification-btn {
+  background: none;
+  border: none;
+  color: #1a5f6f;
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-btn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .header-greeting {
+    font-size: 1rem;
+  }
+
+  .back-btn {
+    font-size: 1.2rem;
+  }
+}

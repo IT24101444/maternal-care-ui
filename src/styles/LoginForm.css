@@ -1,0 +1,334 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f8f9fa;
+  overflow: hidden;
+}
+
+/* ===== SIDE PANELS ===== */
+.login-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+/* Left Image Side */
+.login-image-left {
+  background: linear-gradient(135deg, #17a2b8 0%, #1a5f6f 100%);
+  position: relative;
+}
+
+.login-image-left .image-placeholder {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Right Form Side */
+.login-form-right {
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right Image Side (hidden by default) */
+.login-image-right {
+  background: linear-gradient(135deg, #17a2b8 0%, #1a5f6f 100%);
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.login-image-right.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  width: 50%;
+}
+
+.login-image-right .image-placeholder {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== IMAGE PLACEHOLDER ===== */
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding: 2rem;
+  min-height: 300px;
+}
+
+.placeholder-content {
+  font-size: 1rem;
+  max-width: 200px;
+}
+
+/* Override for left side placeholder */
+.login-image-left .image-placeholder {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== FORM WRAPPER ===== */
+.form-wrapper {
+  width: 100%;
+  max-width: 380px;
+}
+
+.login-title {
+  font-size: 2.2rem;
+  color: #1a5f6f;
+  text-align: right;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* ===== LOGIN FORM ===== */
+.login-form {
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input::placeholder {
+  color: #ccc;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #17a2b8;
+  box-shadow: 0 0 0 3px rgba(23, 162, 184, 0.1);
+}
+
+/* ===== BUTTONS ===== */
+.sign-in-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #2d2d2d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.sign-in-btn:hover:not(:disabled) {
+  background-color: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.sign-in-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Back Button */
+.back-button {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  z-index: 10;
+  padding: 0;
+}
+
+.back-button:hover {
+  background-color: #f0f0f0;
+  transform: translateX(-4px);
+}
+
+.back-button button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #1a5f6f;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.back-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Toggle Button for switching login type */
+.toggle-section {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+}
+
+.toggle-btn {
+  background-color: white;
+  color: #1a5f6f;
+  border: 2px solid white;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Forgot Password Link */
+.forgot-password {
+  text-align: center;
+  display: block;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.forgot-password:hover {
+  color: #17a2b8;
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-side {
+    width: 100%;
+    flex: none;
+    min-height: 50vh;
+  }
+
+  .login-image-left {
+    display: none;
+  }
+
+  .login-form-right {
+    min-height: 100vh;
+    justify-content: center;
+  }
+
+  .login-image-right {
+    display: none !important;
+  }
+
+  .toggle-section {
+    bottom: 1rem;
+  }
+
+  .toggle-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .form-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    height: auto;
+  }
+
+  .login-form-right {
+    min-height: auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .form-wrapper {
+    max-width: 100%;
+  }
+
+  .login-title {
+    font-size: 1.5rem;
+  }
+
+  .form-group input {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .back-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .back-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
