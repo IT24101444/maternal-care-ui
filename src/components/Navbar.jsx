@@ -1,6 +1,6 @@
 import '../styles/Navbar.css'
 
-function Navbar({ onLoginClick }) {
+function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -19,8 +19,6 @@ function Navbar({ onLoginClick }) {
           <a href="#services" className="nav-link">Services</a>
           <a href="#contact" className="nav-link">Contact Us</a>
         </div>
-
-        <button className="login-btn" onClick={onLoginClick}>Login</button>
       </div>
     </nav>
   )

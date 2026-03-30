@@ -5,10 +5,10 @@ import VisionMissionSection from '../components/VisionMissionSection'
 import ServicesSection from '../components/ServicesSection'
 import Footer from '../components/Footer'
 
-function LandingPage({ onLoginClick }) {
+function LandingPage() {
   return (
     <div className="landing-page">
-      <Navbar onLoginClick={onLoginClick} />
+      <Navbar />
       <HeroSection />
       <WelcomeSection />
       <VisionMissionSection />
